@@ -17,6 +17,7 @@ class CelsiusPage implements ActionListener {
     JLabel outputLabel;
     JTextField outputField;
     JLabel outputTempLabel;
+    JButton mainMenuButton;
     
     String inputTemp;
     double num, result;
@@ -107,6 +108,12 @@ class CelsiusPage implements ActionListener {
         outputTempLabel.setBounds(385, 230, 30, 30);
         outputTempLabel.setFont(new Font("Comic Sans", Font.PLAIN, 20));
         
+        mainMenuButton = new JButton("Menu Utama");
+        mainMenuButton.setBounds(170, 350, 150, 40);
+        mainMenuButton.setFont(new Font("Comic Sans", Font.PLAIN, 18));
+        mainMenuButton.setFocusable(false);
+        mainMenuButton.addActionListener(this);
+        
         frame.add(inputLabel);
         frame.add(inputField);
         frame.add(inputTempLabel);
@@ -118,6 +125,7 @@ class CelsiusPage implements ActionListener {
         frame.add(outputLabel);
         frame.add(outputField);
         frame.add(outputTempLabel);
+        frame.add(mainMenuButton);
         
         frame.setVisible(true);
         
@@ -183,6 +191,14 @@ class CelsiusPage implements ActionListener {
             outputField.setText(String.valueOf(result));
             
         }
+        
+        if (e.getSource() == mainMenuButton) {
+            //close main menu
+            frame.dispose(); 
+            //instance
+            MainMenu mainMenu = new MainMenu();
+        }
+        
     }
     
 }
