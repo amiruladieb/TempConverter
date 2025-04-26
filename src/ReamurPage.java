@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-class CelsiusPage implements ActionListener {
+class ReamurPage implements ActionListener {
     
     //declare
     JFrame frame;
@@ -23,9 +23,9 @@ class CelsiusPage implements ActionListener {
     double num, result;
     
     //construct
-    CelsiusPage() {
+    ReamurPage() {
         
-        frame = new JFrame("Konverter Suhu - Celsius (°C)");
+        frame = new JFrame("Konverter Suhu - Reamur (°R)");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 500);
         frame.setLocationRelativeTo(null); // this method display the JFrame to center position of a screen
@@ -48,7 +48,8 @@ class CelsiusPage implements ActionListener {
                     evt.consume();
                 }
                 else if (inputField.getText().isEmpty()) {
-                        notifLabel.setVisible(true);
+                    notifLabel.setText("Masukan suhu awal terlebih dahulu !");
+                    notifLabel.setVisible(true);
                 }
                 else {
                     
@@ -66,7 +67,7 @@ class CelsiusPage implements ActionListener {
             
         });
         
-        inputTempLabel = new JLabel("°C");
+        inputTempLabel = new JLabel("°R");
         inputTempLabel.setBounds(385, 40, 30, 30);
         inputTempLabel.setFont(new Font("Comic Sans", Font.PLAIN, 20));
         
@@ -79,7 +80,7 @@ class CelsiusPage implements ActionListener {
         input2Label.setBounds(40, 130, 180, 30);
         input2Label.setFont(new Font("Comic Sans", Font.PLAIN, 20));
         
-        String[] temp = {" ", "°F", "K", "°R"};
+        String[] temp = {" ", "°C", "°F", "K"};
         inputTempField = new JComboBox(temp);
         inputTempField.setBounds(245, 125, 50, 40);
         inputTempField.setFont(new Font("Comic Sans", Font.PLAIN, 18));
@@ -144,13 +145,13 @@ class CelsiusPage implements ActionListener {
                 case " ":
                     notif2Label.setVisible(true);
                     break;
+                case "°C":
+                    notif2Label.setVisible(false);
+                    break;
                 case "°F":
                     notif2Label.setVisible(false);
                     break;
                 case "K":
-                    notif2Label.setVisible(false);
-                    break;
-                case "°R":
                     notif2Label.setVisible(false);
                     break;
             }
@@ -172,24 +173,30 @@ class CelsiusPage implements ActionListener {
                 outputField.setText("");
             }
             
-            if (num < (-273.15)) {
-                notifLabel.setText("Nol absolut pada skala Celcius adalah -273,15 °C.");
+            if (num < (-218.52)) {
+                notifLabel.setText("Nol mutlak pada skala Reamur adalah -218,52 °R.");
                 notifLabel.setVisible(true);
                 result = Double.parseDouble("");
             }
             
+            if (num > 80) {
+                notifLabel.setText("Suhu tertinggi pada skala Reamur adalah 80 °R.");
+                notifLabel.setVisible(true);
+                result = Double.parseDouble("");
+            }
+
             switch (inputTemp) {
                 case " ":
                     result = Double.parseDouble("");
                     break;
+                case "°C":
+                    result = num * 5 / 4;
+                    break;
                 case "°F":
-                    result = ((num * 9) / 5) + 32;
+                    result = (num * 9 / 4) + 32 ;
                     break;
                 case "K":
-                    result = num + 273.15;
-                    break;
-                case "°R":
-                    result = (num * 4) / 5;
+                    result = (num * 5 / 4) + 273.15;
                     break;
             }
             

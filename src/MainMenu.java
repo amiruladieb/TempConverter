@@ -18,6 +18,7 @@ class MainMenu implements ActionListener {
         frame = new JFrame("Konverter Suhu - Menu Utama");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 500);
+        frame.setLocationRelativeTo(null); // this method display the JFrame to center position of a screen
         frame.setLayout(null);
         
         menuLabel = new JLabel("Pilih suhu asal :");
@@ -60,12 +61,35 @@ class MainMenu implements ActionListener {
     //method
     @Override
     public void actionPerformed(ActionEvent e) {
+        
         if (e.getSource() == celsiusButton) {
             //close main menu
             frame.dispose(); 
             //instance
             CelsiusPage celsiusPage = new CelsiusPage();
         }
+        
+        if (e.getSource() == fahrenheitButton) {
+            //close main menu
+            frame.dispose(); 
+            //instance
+            FahrenheitPage fahrenheitPage = new FahrenheitPage();
+        }
+        
+        if (e.getSource() == kelvinButton) {
+            //close main menu
+            frame.dispose(); 
+            //instance
+            KelvinPage kelvinPage = new KelvinPage();
+        }
+        
+        if (e.getSource() == reamurButton) {
+            //close main menu
+            frame.dispose(); 
+            //instance
+            ReamurPage reamurPage = new ReamurPage();
+        }
+        
     }
     
     

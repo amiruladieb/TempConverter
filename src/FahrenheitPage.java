@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-class CelsiusPage implements ActionListener {
+class FahrenheitPage implements ActionListener {
     
     //declare
     JFrame frame;
@@ -23,9 +23,9 @@ class CelsiusPage implements ActionListener {
     double num, result;
     
     //construct
-    CelsiusPage() {
+    FahrenheitPage() {
         
-        frame = new JFrame("Konverter Suhu - Celsius (°C)");
+        frame = new JFrame("Konverter Suhu - Fahrenheit (°F)");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 500);
         frame.setLocationRelativeTo(null); // this method display the JFrame to center position of a screen
@@ -66,7 +66,7 @@ class CelsiusPage implements ActionListener {
             
         });
         
-        inputTempLabel = new JLabel("°C");
+        inputTempLabel = new JLabel("°F");
         inputTempLabel.setBounds(385, 40, 30, 30);
         inputTempLabel.setFont(new Font("Comic Sans", Font.PLAIN, 20));
         
@@ -79,7 +79,7 @@ class CelsiusPage implements ActionListener {
         input2Label.setBounds(40, 130, 180, 30);
         input2Label.setFont(new Font("Comic Sans", Font.PLAIN, 20));
         
-        String[] temp = {" ", "°F", "K", "°R"};
+        String[] temp = {" ", "°C", "K", "°R"};
         inputTempField = new JComboBox(temp);
         inputTempField.setBounds(245, 125, 50, 40);
         inputTempField.setFont(new Font("Comic Sans", Font.PLAIN, 18));
@@ -144,7 +144,7 @@ class CelsiusPage implements ActionListener {
                 case " ":
                     notif2Label.setVisible(true);
                     break;
-                case "°F":
+                case "°C":
                     notif2Label.setVisible(false);
                     break;
                 case "K":
@@ -172,8 +172,8 @@ class CelsiusPage implements ActionListener {
                 outputField.setText("");
             }
             
-            if (num < (-273.15)) {
-                notifLabel.setText("Nol absolut pada skala Celcius adalah -273,15 °C.");
+            if (num < (-459.67)) {
+                notifLabel.setText("Nol mutlak pada skala Fahrenheit adalah -459,67 °F.");
                 notifLabel.setVisible(true);
                 result = Double.parseDouble("");
             }
@@ -182,14 +182,14 @@ class CelsiusPage implements ActionListener {
                 case " ":
                     result = Double.parseDouble("");
                     break;
-                case "°F":
-                    result = ((num * 9) / 5) + 32;
+                case "°C":
+                    result = (num - 32) * 5 / 9;
                     break;
                 case "K":
-                    result = num + 273.15;
+                    result = (num + 459.67) * 5 / 9;
                     break;
                 case "°R":
-                    result = (num * 4) / 5;
+                    result = (num - 32) * 4 / 9;
                     break;
             }
             
