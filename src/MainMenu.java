@@ -22,6 +22,10 @@ class MainMenu implements ActionListener {
         frame.setLayout(null);
         frame.setResizable(false);
         
+        //frame icon
+        ImageIcon frameIcon = new ImageIcon("temperature.png");
+        frame.setIconImage(frameIcon.getImage());
+        
         menuLabel = new JLabel("Pilih suhu asal :");
         menuLabel.setBounds(160, 25, 200, 20);
         menuLabel.setFont(new Font("Comic Sans", Font.PLAIN, 25));

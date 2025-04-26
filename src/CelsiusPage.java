@@ -32,6 +32,10 @@ class CelsiusPage implements ActionListener {
         frame.setLayout(null);
         frame.setResizable(false);
 
+        //frame icon
+        ImageIcon frameIcon = new ImageIcon("temperature.png");
+        frame.setIconImage(frameIcon.getImage());
+        
         inputLabel = new JLabel("Masukan nilai :");
         inputLabel.setBounds(40, 40, 140, 30);
         inputLabel.setFont(new Font("Comic Sans", Font.PLAIN, 20));
