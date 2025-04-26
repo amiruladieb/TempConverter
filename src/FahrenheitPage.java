@@ -30,7 +30,8 @@ class FahrenheitPage implements ActionListener {
         frame.setSize(500, 500);
         frame.setLocationRelativeTo(null); // this method display the JFrame to center position of a screen
         frame.setLayout(null);
-        
+        frame.setResizable(false);
+
         inputLabel = new JLabel("Masukan nilai :");
         inputLabel.setBounds(40, 40, 140, 30);
         inputLabel.setFont(new Font("Comic Sans", Font.PLAIN, 20));

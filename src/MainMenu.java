@@ -20,6 +20,7 @@ class MainMenu implements ActionListener {
         frame.setSize(500, 500);
         frame.setLocationRelativeTo(null); // this method display the JFrame to center position of a screen
         frame.setLayout(null);
+        frame.setResizable(false);
         
         menuLabel = new JLabel("Pilih suhu asal :");
         menuLabel.setBounds(160, 25, 200, 20);
