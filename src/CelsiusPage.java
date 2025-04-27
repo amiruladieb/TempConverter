@@ -81,7 +81,7 @@ class CelsiusPage implements ActionListener {
         notifLabel.setForeground(Color.red);
         
         input2Label = new JLabel("Konversikan menjadi");
-        input2Label.setBounds(40, 130, 180, 30);
+        input2Label.setBounds(40, 130, 200, 30);
         input2Label.setFont(new Font("Comic Sans", Font.PLAIN, 20));
         
         String[] temp = {" ", "°F", "K", "°R"};
