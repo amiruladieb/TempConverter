@@ -33,7 +33,7 @@ class FahrenheitPage implements ActionListener {
         frame.setResizable(false);
 
         //frame icon
-        ImageIcon frameIcon = new ImageIcon("temperature.png");
+        ImageIcon frameIcon = new ImageIcon(getClass().getResource("/images/temperature.png"));
         frame.setIconImage(frameIcon.getImage());
         
         inputLabel = new JLabel("Masukan nilai :");
