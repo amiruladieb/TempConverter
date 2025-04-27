@@ -9,4 +9,4 @@ Java
 - Display **JFrame** at the **Center** of Screen : [here](https://www.tutorialspoint.com/how-to-display-a-jframe-to-the-center-of-a-screen-in-java)
 - Set **Margin** to *JButton* : [here](https://www.tutorialspoint.com/how-can-we-set-the-margin-to-a-jbutton-in-java)
 - Change the default **icon** of the **window** : [here](https://www.tutorialspoint.com/swingexamples/change_default_icon_of_window.htm)
-    - **Frame icons** can be packaged in an application **jar** : [here1](https://stackoverflow.com/questions/15657569/how-to-set-icon-to-jframe)
+    - **Frame icons** can be packaged in an application **jar** : [here](https://stackoverflow.com/questions/15657569/how-to-set-icon-to-jframe)
